@@ -124,6 +124,7 @@ export const getUser = async () => {
       const decoded = jwt.verify(cookie, process.env.JWT_SECRET!);
       return decoded as JwtPayload;
     } catch (error) {
+      console.error(error);
       return null;
     }
   }
